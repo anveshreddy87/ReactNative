@@ -15,6 +15,14 @@ module.exports = StyleSheet.create({
             //justifyContent : 'center'
             flexDirection : 'column'
     },
+    userInput : {
+    alignItems : 'center',
+    alignSelf : 'center',
+    width : windowSize.width*0.7,
+    height : 40,
+    backgroundColor : 'white',
+    color : 'black'
+  },
     ButtonStyle:{
                 flexDirection : 'column',
                 alignItems : 'center',

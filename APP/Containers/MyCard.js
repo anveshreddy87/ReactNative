@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -7,24 +6,29 @@ import {
   Dimensions,
   TextInput,
   TouchableHighlight,
-  TouchableOpacity
+  TouchableOpacity,
+  BackAndroid
 
 } from 'react-native';
 var windowSize=Dimensions.get('window');
+
+import MapView from 'react-native-maps';
 
 import StatusBar from '../Components/StatusBar'
 import Button from '../Components/Button'
 
 import { NativeModules } from 'react-native';
 
+var screen = 'mycard'
 
 class MyCard extends Component {
 
     constructor(){
         super();
         this.state={
-            mobileNumber : '+15105054355',
-            msg : ''
+            mobileNumber : '+910000000000',
+            msg : '',
+            //focus :true
         }
     }
 
@@ -47,49 +51,58 @@ this.state.mobileNumber,
 render(){
 
     return(
-        <View>
-
+        <View style = {{flex : 1 , backgroundColor : 'white'}}>
         <StatusBar leftIcon='chevron-left' title="My Card" StatusBarColor="#00BCD4" navigator={this.props.navigator}/>
 
         <View style={{
             alignItems : 'center',
             justifyContent :'center',
+            backgroundColor : 'white'
 
-        }}>
-        <Text style = {{fontSize : 30,
-          alignSelf:'center',
-        marginTop:10,
-      color:'blue'}}>
+        }}
+
+        >
+        <Text style = {{fontSize : 30}}>
         Send Message
         </Text>
 
         <View style={{flexDirection : 'row',padding : 20}}>
+
         <Text style={{
-            alignItems : 'center',
-        alignSelf : 'center',
-        flex : 2,
-        color : 'black',
-        fontSize:20,
-        justifyContent : 'center'
-
-      }}>Mobile Number:</Text>
-        <TextInput
-
-        style={{
         alignItems : 'center',
-        flex :2,
-        fontSize:20,
         alignSelf : 'center',
-        height : 70,
+        flex : 1,
 
+        color : 'black',
+        justifyContent : 'center',
+
+        }}>Mobile Number</Text>
+
+        <View style={{
+            borderColor :'black',
+            borderRadius : 5,
+            borderWidth : 1,
+            flex : 2,
+
+            alignItems : 'center',
+            alignSelf : 'center',
+        }}>
+        <TextInput
+        keyboardType = 'numeric'
+        autoFocus={this.state.focus}
+        style={{
+        width : 250,
+        height : 40,
         color : 'black'
         }}
-        placeholder="enter Phone number"
+
         onChangeText = {(text) => {
         this.setState({mobileNumber:text})
         }}
         value={this.state.mobileNumber}
         />
+        </View>
+
         </View>
 
 
@@ -116,17 +129,18 @@ render(){
                 }
                 >
                 <Text style={{
-                fontSize : 30,
-
-                padding : 70,
+                fontSize : 16,
+                padding : 20,
                 color : 'white'
-              }}>Send text</Text>
+                }}>Send Message</Text>
                 </TouchableOpacity>
 
                 <Text>{this.state.msg}</Text>
 
 
         </View>
+
+
         </View>
 
     );

@@ -18,7 +18,7 @@ class Deductable extends Component {
 render(){
 
     return(
-        <View>
+        <View style = {{flex : 1 , backgroundColor : 'white'}}>
 
         <StatusBar leftIcon='chevron-left' title="Deductables" StatusBarColor="#00BCD4" navigator={this.props.navigator}/>
 

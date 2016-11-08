@@ -13,23 +13,19 @@ import {
 const window = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-
-
-class StatusBar extends Component{
-    constructor(props){
+  class StatusBar extends Component{
+     constructor(props){
         super(props);
         this.state={
             StatusBarColor : this.props.StatusBarColor
         }
-
     }
-
 
     HandleleftButton(){
         var routeName = this.props.title
         //alert(routeName)
         switch(routeName){
-            case 'Forgot Pasword':
+            case 'Forgot Password':
             this.props.navigator.pop()
             break;
 
@@ -45,31 +41,33 @@ class StatusBar extends Component{
             this.props.navigator.pop()
             break;
 
+            case 'Navigation':
+            this.props.navigator.pop()
+            break;
+
             //case 'Welcome Screen':
             //this.props.navigator.pop()
             //break;
-
             case 'Deductables':
             this.props.navigator.pop()
             break;
 
+            case 'My Web':
+            this.props.navigator.pop()
+            break;
 
-        default :
+            default :
             console.log('menu button')
         }
     }
-
-
 
     render(){
 
         return(
         <View style={{
           backgroundColor : this.state.StatusBarColor,
-
-          height: PixelRatio.getPixelSizeForLayoutSize(20),
+          height: PixelRatio.getPixelSizeForLayoutSize(30),
           flexDirection : 'row'
-
 
         }}>
 
@@ -85,7 +83,7 @@ class StatusBar extends Component{
            this.HandleleftButton()
         }}
         >
-        <Icon name= {this.props.leftIcon} size={PixelRatio.getPixelSizeForLayoutSize(10)} color="white" />
+        <Icon name= {this.props.leftIcon} size={PixelRatio.getPixelSizeForLayoutSize(15)} color="white" />
         </TouchableOpacity>
 
         <View
@@ -96,7 +94,7 @@ class StatusBar extends Component{
       }}>
         <Text
         style={{
-          fontSize : 18,
+          fontSize : 30,
           color : '#ffffff',
           alignSelf : 'flex-start',
           fontWeight : 'bold',
@@ -105,10 +103,6 @@ class StatusBar extends Component{
         }}
         >{this.props.title}</Text>
         </View>
-
-
-
-
 
         </View>
             );

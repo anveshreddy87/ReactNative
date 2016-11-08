@@ -25,8 +25,8 @@ import TabBarNavigator from '../Components/TabBarNavigator'
 // Dimensions : gets dimenson of current screen
 // window.height ; window.width
 const window = Dimensions.get('window');
-const wrapperheight = window.height -80
-const bottomheight = window.height - wrapperheight
+//const wrapperheight = window.height -80
+//const bottomheight = window.height - wrapperheight
 import StatusBar from '../Components/StatusBar'
 
 //Welcome Screen class extending Component from react-native
@@ -38,8 +38,8 @@ class WelcomeScreen extends Component{
       /****** returning JSX Component to render on the Screen ************/
 
         return(
-           <View style={{flex :1}}>
-            <StatusBar leftIcon='menu' title="Welcome Screen" StatusBarColor="#00BCD4" navigator={this.props.navigator}/>
+           <View style={{flex : 1 , backgroundColor : 'white'}}>
+      <StatusBar leftIcon='menu' title="Welcome Screen" StatusBarColor="#00BCD4" navigator={this.props.navigator}/>
 
            <ScrollView>
            <View>
@@ -100,13 +100,18 @@ class WelcomeScreen extends Component{
                     </View>
 
                     <View style ={styles.fsatransactionbackground}>
+                    <TouchableHighlight onPress={()=>{this.props.navigator.push({name:'WebViewExample'})}} >
                     <Text style={{fontSize : 30}}>$3220</Text>
+                     </TouchableHighlight>
                     <Icon name= 'chevron-right' size={40} color="skyblue" />
                     <Text style = {{textAlign :'center'}}>FSA Transactions</Text>
                     </View>
                     </View>
 
-                    <Image style = {styles.imagestyle}
+                    <Image style = {{
+                    width : window.width,
+                    height : 400,
+                    alignSelf:'center'}}
                     source={require('./resources/weather.png')}
                     resizeMode = {Image.resizeMode.contain} />
                     </View>

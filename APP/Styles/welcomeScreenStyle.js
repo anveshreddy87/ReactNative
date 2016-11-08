@@ -135,12 +135,12 @@ deductablebackground:{
 fsatransactionbackground:{
   flex : 1,
   alignItems : 'center'
-},
-
-imagestyle:{
-width : 400,
-height : 400,
-alignSelf:'center'
 }
+
+//imagestyle:{
+//width : window.width,
+//height : 400,
+//alignSelf:'center'
+//}
 
 });

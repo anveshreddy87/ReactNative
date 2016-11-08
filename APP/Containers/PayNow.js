@@ -7,7 +7,7 @@ import {
   TextInput,
   TouchableHighlight,
   TouchableOpacity
-  
+
 } from 'react-native';
 const window = Dimensions.get('window');
 
@@ -18,7 +18,7 @@ class PayNow extends Component {
 render(){
 
     return(
-        <View>
+        <View style = {{flex : 1 , backgroundColor : 'white'}}>
 
         <StatusBar leftIcon='chevron-left' title="Pay Now" StatusBarColor="#00BCD4" navigator={this.props.navigator}/>
 

@@ -78,6 +78,7 @@ module.exports = StyleSheet.create({
     forgotPassword : {
     color : 'white',
     alignSelf : 'flex-start',
+    fontSize : 18,
     //marginLeft : 50,
     flex : 1,
     textAlign : 'left'
@@ -86,6 +87,7 @@ module.exports = StyleSheet.create({
     register:{
     color : 'white',
     alignSelf : 'flex-start',
+    fontSize:20,
     //marginRight : 60,
     flex : 1,
     textAlign : 'left'

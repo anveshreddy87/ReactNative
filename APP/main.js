@@ -49,10 +49,10 @@ render(){
     <View style={styles.userInputWrapper}>
     <TextInput style={styles.userInput}
     placeholder="User Name"
-    onChangeText = {(text) => {
-    this.setState({userName:text})
-    }}
-    value={this.state.userName} />
+      onChangeText = {(text) => {
+      this.setState({userName:text})
+      }}
+      value={this.state.userName} />
     </View>
 
     <View style={styles.userInputWrapper}>

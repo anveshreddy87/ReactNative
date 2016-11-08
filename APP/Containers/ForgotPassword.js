@@ -17,26 +17,36 @@ import StatusBar from '../Components/StatusBar'
 import styles from '../Styles/ForgotPasswordStyle';
 
 
-class ForgotPasword extends Component{
+class ForgotPassword extends Component{
+  constructor(){
+    super();
+    this.state={
+      Email:''
+
+
+    }
+  }
     render(){
         return(
         <View style={styles.container}>
 
-        <StatusBar leftIcon='chevron-left' title="Forgot Pasword" StatusBarColor="#00BCD4" navigator={this.props.navigator}/>
+        <StatusBar leftIcon='chevron-left' title="Forgot Password" StatusBarColor="#00BCD4" navigator={this.props.navigator}/>
 
         <View style={{justifyContent : 'center',marginTop : 50}}>
-
-        <UserInput displayText="Enter Your Registered Email" check = ""{...this.props}/>
-
+        <TextInput style={styles.userInput}
+        placeholder="Enter Registered Email"
+          onChangeText = {(text) => {
+          this.setState({Email: text})
+          }}
+          value={this.state.Email} />
 
         <View style={{flexDirection : 'row'}}>
 
-
-        <TouchableOpacity style={styles.ButtonStyle} >
-
+        <TouchableOpacity
+        onPress={()=>{this.props.navigator.push({name:'MyWeb'})}}
+                style={styles.ButtonStyle}>
                 <Text style={styles.textstyle}>Submit</Text>
                 </TouchableOpacity>
-
         </View>
 
         </View>
@@ -48,4 +58,4 @@ class ForgotPasword extends Component{
 
 }
 
-export default ForgotPasword
+export default ForgotPassword

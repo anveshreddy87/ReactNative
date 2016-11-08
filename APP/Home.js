@@ -20,7 +20,8 @@ import Deductable from './Containers/Deductables'
 import PayNow from './Containers/PayNow'
 import MyCard from './Containers/MyCard'
 import MapView from './Containers/MapView'
-
+import SplashScreen from './Containers/SplashScreen'
+import MyWeb from './Containers/WebView'
 //Home class extending Component from react-native
 
 class Home extends Component {
@@ -56,8 +57,16 @@ return <MyCard  navigator={navigator} />
 if(route.name == 'deductable'){
 return <Deductable  navigator={navigator} />
 }
+
+if(route.name == 'MyWeb'){
+return <MyWeb  navigator={navigator} />
+}
+
 if(route.name == 'mapview'){
       return <MapView  navigator={navigator} />
+}
+if(route.name == 'splashscreen'){
+      return <SplashScreen  navigator={navigator} />
 }
 
 }
@@ -68,7 +77,7 @@ configureScene(route){
     switch(route.name){
 
     case 'mainScreen':
-      return Navigator.SceneConfigs.PushFromRight
+      return Navigator.SceneConfigs.FadeAndroid
 
     case 'forgotPassword':
       return Navigator.SceneConfigs.PushFromRight
@@ -83,7 +92,7 @@ configureScene(route){
       return Navigator.SceneConfigs.PushFromRight
 
     default :
-      return Navigator.SceneConfigs.PushFromRight
+      return Navigator.SceneConfigs.FadeAndroid
 
 }
 }
@@ -94,7 +103,7 @@ render(){
     /****** returning JSX Component to render on the Screen ************/
     return(
             <Navigator
-            initialRoute={{name: 'mainScreen'}}
+            initialRoute={{name: 'splashscreen'}}
             renderScene={this.renderScene.bind(this)}
             configureScene={this.configureScene.bind(this)}
             />

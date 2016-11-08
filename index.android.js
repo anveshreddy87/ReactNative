@@ -9,10 +9,14 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  BackAndroid
 } from 'react-native';
 
 import Home from './APP/Home'
 
+BackAndroid.addEventListener('hardwareBackPress', () => {
+  return true;
+});
 
 AppRegistry.registerComponent('UserLogin', () => Home);
